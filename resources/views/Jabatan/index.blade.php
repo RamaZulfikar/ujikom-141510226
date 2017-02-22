@@ -29,7 +29,7 @@
                                 <td><center>{{ $data->kode_jabatan }}</center></td>
                                 <td><center>{{ $data->nama_jabatan }}</center></td>
                                 <td><center>{{ $data->besaran_uang }}</center></td>
-                                <th><center>
+                                <td><center>
                  <form method="POST" action="{{ route('jabatan.destroy', $data->id) }}" accept-charset="UTF-8">
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -39,7 +39,7 @@
                                     </center>
                                     </center>
                                     </form>
-                                </th>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

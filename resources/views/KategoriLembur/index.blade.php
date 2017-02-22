@@ -22,7 +22,7 @@
                     </tr>
                     @php
                     $no=1;
-                    @endphp
+                    @endphp 
                     <tbody>
                         @foreach ($kategorii as $dadah)
                             <tr>
@@ -31,7 +31,7 @@
                                 <td><center>{{ $dadah->jabatan->nama_jabatan }}</center></td>
                                 <td><center>{{ $dadah->golongan->nama_golongan }}</center></td>
                                 <td><center>{{ $dadah->besaran_uang }}</center></td>
-                                <th><center>
+                                <td><center>
                  <form method="POST" action="{{ route('kategori.destroy', $dadah->id) }}" accept-charset="UTF-8">
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -41,7 +41,7 @@
                                     </center>
                                     </center>
                                     </form>
-                                </th>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

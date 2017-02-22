@@ -18,7 +18,10 @@ class pegawai extends Model
     public function user(){
     	return $this->belongsTo('App\User','user_id');
     }
-    public function lembur(){
-        return $this->hasMany('App\lembur_pegawai','pegawai_id');
+
+
+    
+    public function lemburpegawai(){
+        return $this->hasMany('App\pegawailembur','pegawai_id');
     }
 }

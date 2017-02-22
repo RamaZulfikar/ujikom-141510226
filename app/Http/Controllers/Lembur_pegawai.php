@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Request;
+use App\pegawai;
+use App\pegawailembur;
+use App\kategoriL;
+use App\User;
+use App\golongan;
+use App\jabatan;
+use Validator;
+Use Input;
 class Lembur_pegawai extends Controller
 {
     /**
@@ -13,7 +20,8 @@ class Lembur_pegawai extends Controller
      */
     public function index()
     {
-        //
+        $lembur=pegawailembur::with('pegawai','golongan','jabatan')->get();
+        return view('LemburPegawai.index', compact('lembur'));
     }
 
     /**
@@ -23,7 +31,10 @@ class Lembur_pegawai extends Controller
      */
     public function create()
     {
-        //
+        $kategori=kategoriL::all();
+        $Pegawai=pegawai::all();   
+        $user=User::all(); 
+        return view('LemburPegawai.create', compact('kategori','Pegawai','user'));
     }
 
     /**
@@ -34,7 +45,20 @@ class Lembur_pegawai extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $alamat =[
+        //     'kode_lembur_id' => 'required',
+        //     'pegawai_id' => 'required',
+        //     'jumlah_jam' => 'required'];
+
+        //      $valid=Validator::make(Input::all(),$alamat);
+        // if ($valid->fails()){ 
+        //         return redirect()->back()
+        //         ->withErrors($valid)
+        //         ->withInput();
+        //     }
+                $lembur=Request::all();
+            pegawailembur::create($lembur);
+            return redirect('Lembur');
     }
 
     /**
@@ -56,7 +80,10 @@ class Lembur_pegawai extends Controller
      */
     public function edit($id)
     {
-        //
+        $kateg=kategoriL::all();
+        $pegawai=pegawai::all();
+        $lemburr = pegawailembur::find($id);
+        return view('LemburPegawai.edit', compact('lemburr','pegawai','kateg'));
     }
 
     /**
@@ -68,7 +95,40 @@ class Lembur_pegawai extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $lembur=pegawailembur::find($id);
+        // if ($lembur['kode_lembur_id'] != Request('kode_lembur_id')) {
+        //     # code...
+        // $rules =[
+            
+        //     'pegawai_id' => 'required',
+        //     'jumlah_jam' => 'required'
+        //     ];
+        // }
+        // else{
+        //     $rules =[
+            
+        //     'pegawai_id' => 'required',
+        //     'jumlah_jam' => 'required'
+        //     ];   
+        //   }
+
+        // $validate=Validator::make(Input::all(),$rules);
+
+        // if ($validate->fails()){
+        //         return redirect()->back()
+        //         ->withErrors($validate)
+        //         ->withInput();
+        // }
+        // $aku =pegawailembur::find($id);
+        // // $aku->kode_lembur_id=Input::get('kode_lembur_id');
+        // $aku->pegawai_id=Input::get('pegawai_id');
+        // $aku->jumlah_jam=Input::get('jumlah_jam');
+        // $aku->update();
+        // return redirect('Lembur');
+        $LUpdate=request::all();
+        $lemburr=pegawailembur::find($id);
+        $lemburr->update($LUpdate);
+        return redirect('Lembur');
     }
 
     /**

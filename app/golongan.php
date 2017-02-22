@@ -12,4 +12,8 @@ class golongan extends Model
     public function pegawai(){
     	return $this->HasMany('App\pegawai','golongan_id');
     }
+    public function Tunjangan(){
+    return $this->hasMany('App\tunjangan','golongan_id');	
+    }
+    
 }

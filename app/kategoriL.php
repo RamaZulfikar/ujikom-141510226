@@ -16,7 +16,7 @@ class kategoriL extends Model
 	public function golongan(){
 		return $this->belongsTo('App\golongan','golongan_id');
 	}
-	public function lembur_pegawai(){
-		return $this->hasMany('App\lembur_pegawai','kode_lembur');
+	public function lemburpegawai(){
+		return $this->hasMany('App\pegawailembur','kode_lembur_id');
 	}
 }

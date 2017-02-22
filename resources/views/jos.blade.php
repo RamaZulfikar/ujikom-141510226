@@ -7,6 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">DAFTAR TABEL</div>
                 	 <div>
+                     
                     <a class="navbar-brand" href="/golongan"><i class='fa fa-linux'></i>Golongan</a>
                     
                     <a class="navbar-brand" href="/jabatan">Jabatan</a>
@@ -15,11 +16,15 @@
 
                     <a class="navbar-brand" href="/kategori">Kategori Lembur</a>
 
-                    <a class="navbar-brand" href="/lembur">Lembur Pegawai</a>
+                    <a class="navbar-brand" href="/Lembur">Lembur Pegawai</a>
+
+                    <a class="navbar-brand" href="/tunjangan">Tunjangan</a>
+
                 </div>
                 <div class="panel-body">
                 </div>
             </div>
+     </div>
         </div>
     </div>
 </div>

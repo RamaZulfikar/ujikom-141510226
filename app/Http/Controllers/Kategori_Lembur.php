@@ -45,8 +45,8 @@ class Kategori_Lembur extends Controller
     {
         $alamat =[
             'kode_lembur' => 'required|unique:kategori_lembur,kode_lembur',
-            'nama_jabatan' => 'required',
-            'nama_golongan' => 'required',
+            'jabatan_id' => 'required',
+            'golongan_id' => 'required',
             'besaran_uang' => 'required'];
             
             // $pesan =[
@@ -97,7 +97,13 @@ class Kategori_Lembur extends Controller
      */
     public function edit($id)
     {
-        //
+         $kateg = kategoriL::find($id);
+         $jabatann = Jabatan::all();
+        $golongann = Golongan::all();
+        return view('KategoriLembur.edit', compact('kateg','jabatann','golongann'));
+
+
+        
     }
 
     /**
@@ -109,7 +115,40 @@ class Kategori_Lembur extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $katego=kategoriL::find($id);
+        if ($katego['kode_lembur'] != Request('kode_lembur')) {
+            # code...
+        $rules =[
+            'kode_lembur' => 'required|unique:kategori_lembur,kode_lembur',
+            'jabatan_id' => 'required',
+            'golongan_id' => 'required',
+            'besaran_uang' => 'required'
+            ];
+        }
+        else{
+            $rules =[
+            'kode_lembur' => 'required',
+            'jabatan_id' => 'required',
+            'golongan_id' => 'required',
+            'besaran_uang' => 'required'
+            ];   
+          }
+
+        $validate=Validator::make(Input::all(),$rules);
+
+        if ($validate->fails()){
+                return redirect()->back()
+                ->withErrors($validate)
+                ->withInput();
+        }
+        $aku =kategoriL::find($id);
+        $aku->kode_lembur=Input::get('kode_lembur');
+        $aku->jabatan_id=Input::get('jabatan_id');
+        $aku->golongan_id=Input::get('golongan_id');
+        $aku->besaran_uang=Input::get('besaran_uang');
+        $aku->update();
+        return redirect('kategori');
+        
     }
 
     /**
@@ -120,6 +159,7 @@ class Kategori_Lembur extends Controller
      */
     public function destroy($id)
     {
-        //
+        kategoriL::find($id)->delete();
+        return redirect('kategori');
     }
 }

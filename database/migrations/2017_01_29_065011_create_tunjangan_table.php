@@ -20,6 +20,9 @@ class CreateTunjanganTable extends Migration
             $table->foreign('jabatan_id')->references('id')->on('jabatan')->onDelete('CASCADE');
              $table->unsignedInteger('golongan_id');
             $table->foreign('golongan_id')->references('id')->on('golongan')->onDelete('CASCADE');
+            $table->string('status');
+            $table->integer('jumlah_anak');
+            $table->integer('besaran_uang');
             $table->timestamps();
         });
     }

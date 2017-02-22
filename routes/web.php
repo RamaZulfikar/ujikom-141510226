@@ -24,3 +24,4 @@ Route::resource('jabatan','JabatanController');
 Route::resource('pegawai','PegawaiController');
 Route::resource('kategori','Kategori_Lembur');
 Route::resource('Lembur','Lembur_pegawai');
+Route::resource('tunjangan','tunjangancontroller');

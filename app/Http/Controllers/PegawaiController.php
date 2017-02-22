@@ -125,7 +125,11 @@ class PegawaiController extends Controller
      */
     public function show($id)
     {
-        //
+        $golongan=golongan::all();
+        $jabatan=jabatan::all();
+        $user=User::all();
+        $pegawai=pegawai::find($id);
+   return view('Pegawai.show',compact('pegawai','user','golongan','jabatan'));
     }
 
     /**
