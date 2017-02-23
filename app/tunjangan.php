@@ -17,5 +17,9 @@ class tunjangan extends Model
 	public function golongan(){
 		return $this->belongsTo('App\golongan','golongan_id');
 	}
+	public function tunjanganpegawai(){
+    	return $this->hasMany('App\tunjangan_pegawai','kode_tunjangan_id');
+    }
+
 
 }

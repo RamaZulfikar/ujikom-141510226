@@ -20,6 +20,7 @@
 
                     <a class="navbar-brand" href="/tunjangan">Tunjangan</a>
 
+                    <a class="navbar-brand" href="/tunjangpegawai">Tunjangan Pegawai</a>
                 </div>
                 <div class="panel-body">
                 </div>

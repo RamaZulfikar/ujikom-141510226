@@ -67,7 +67,7 @@ class tunjangancontroller extends Controller
         $a->kode_tunjangan=Input::get('kode_tunjangan');
         $a->jabatan_id=Input::get('jabatan_id');
         $a->golongan_id=Input::get('golongan_id');
-        $a->status=0;
+        $a->status=Input::get('status');
         $a->jumlah_anak=Input::get('jumlah_anak');
         $a->besaran_uang=Input::get('besaran_uang');
         $a->save();
@@ -97,7 +97,10 @@ class tunjangancontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $jab = jabatan::all();
+        $gol = golongan::all();
+        $tunjangan = tunjangan::find($id);
+        return view('Tunjangan.edit', compact('tunjangan', 'gol', 'jab'));
     }
 
     /**
@@ -109,7 +112,10 @@ class tunjangancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tunjanganUpdate = Request::all();
+        $tunjangan = tunjangan::find($id);
+        $tunjangan->update($tunjanganUpdate);
+        return redirect('tunjangan');
     }
 
     /**

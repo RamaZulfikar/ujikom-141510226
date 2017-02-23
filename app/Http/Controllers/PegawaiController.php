@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Request;
+// use Request;
+use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\User;
 use App\jabatan;
 use App\pegawai;
 use App\golongan;
-use Validator;
+
 use Input;
+use File;
+
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 class PegawaiController extends Controller
@@ -140,7 +145,10 @@ class PegawaiController extends Controller
      */
     public function edit($id)
     {
-        
+        $gol = golongan::all();
+        $jab = jabatan::all();
+        $pegawai = pegawai::find($id);
+        return view('Pegawai.edit', compact('pegawai', 'jab', 'gol'));
     }
 
     /**
@@ -152,7 +160,35 @@ class PegawaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       // $this->validate($request, [
+       //      'name' => 'max:255',
+       //      'email' => 'email|max:255|unique:users',
+       //      'password' => 'min:6|confirmed',
+       //      'permission' => 'max:255',
+       //      'nip'=>'numeric|min:8',
+       //      ]);
+
+        $pegawai = pegawai::where('id', $id)->first();
+        $pegawai->nip = $request['nip'];
+        $pegawai->jabatan_id = $request['jabatan_id'];
+        $pegawai->golongan_id = $request['golongan_id'];
+
+
+        if($request->file('foto') == "")
+        {
+            $pegawai->foto = $pegawai->foto;
+        } 
+        else
+        {
+            $file = $request->file('foto');
+            $filename = $file->getClientOriginalName();
+            $request->file('foto')->move("assets/image/", $filename);
+            $pegawai->foto = $filename;
+        }
+        
+        $pegawai->update();
+        return redirect('pegawai');
+           
     }
 
     /**

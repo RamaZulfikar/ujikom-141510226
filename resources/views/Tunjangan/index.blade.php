@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-primary">
-            <div class="panel panel-heading"><h1><center>Lembur Pegawai</center></h1></div>
+            <div class="panel panel-heading"><h1><center>Tunjangan</center></h1></div>
                 <a href="{{url('/tunjangan/create')}}" class="btn btn-success">Tambah Data</a><br>
                 <div class="panel-body">
                 <div class="form-group"><center>

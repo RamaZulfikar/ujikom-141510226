@@ -68,11 +68,9 @@
 
                             <div class="col-md-6">
                                 <select name="status" class="form-control">
-                                    <option value="">Pilih</option>
-                                    <option value="">Menikah</option>
-                                    <option value="">BelumMenikah</option>
-                                    <option value="">DUDA</option>
-                                    <option value="">JANDA</option>
+                                    
+                                    <option name="status">Menikah</option>
+                                    <option name="status">BelumMenikah</option>
                                 </select>
 
                                 @if ($errors->has('status'))
