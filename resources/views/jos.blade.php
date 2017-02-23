@@ -8,7 +8,7 @@
                 <div class="panel-heading">DAFTAR TABEL</div>
                 	 <div>
                      
-                    <a class="navbar-brand" href="/golongan"><i class='fa fa-linux'></i>Golongan</a>
+                    <a class="navbar-brand" href="/golongan">Golongan</a>
                     
                     <a class="navbar-brand" href="/jabatan">Jabatan</a>
                     
