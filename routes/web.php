@@ -10,14 +10,16 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('/', function () {
-	return view('home');
+Route::get('/error', function ()
+{
+	return view('gagal');
 });
 
-Route::get('/table', 'tablecontroller@index');
-Route::get('/home', 'HomeController@index');
-	
 Auth::routes();
+
+Route::get('/table', 'tablecontroller@index');
+Route::get('/', 'HomeController@index');
+	
 
 Route::resource('golongan','Golongancontroller');
 Route::resource('jabatan','JabatanController');
@@ -26,3 +28,6 @@ Route::resource('kategori','Kategori_Lembur');
 Route::resource('Lembur','Lembur_pegawai');
 Route::resource('tunjangan','tunjangancontroller');
 Route::resource('tunjangpegawai','tunjangan_pegawaicontroller');
+Route::resource('penggajian','penggajiancontroller');
+Route::resource('/user','usercontroller');
+

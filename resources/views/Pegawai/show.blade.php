@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-<div class="panel panel-primary">
+<div class="panel panel-default">
 <div class="panel-heading"><h3><b>Show Pegawai</b></h3></div>
 <div class="panel-body">
 

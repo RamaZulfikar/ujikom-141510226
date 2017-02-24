@@ -37,10 +37,29 @@
                     </button>
 
                     <!-- Branding Image -->
-                  <div>
+                  
+                  <div class="dropdown" class="right">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">DAFTAR TABEL<span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-center" >
 
-                    <a class="navbar-brand" href="{{ url('/table') }}">DAFTAR TABEL</a>
-                </div>
+                    <li class="dropdown-header"><a class="navbar-brand" href="/golongan">Golongan</a></li>
+                    
+                    <li class="dropdown-header"><a class="navbar-brand" href="/jabatan">Jabatan</a></li>
+                    
+                    <li class="dropdown-header"><a class="navbar-brand" href="/pegawai">Pegawai</a></li>
+
+                    <li class="dropdown-header"><a class="navbar-brand" href="/kategori">Kategori Lembur</a></li>
+
+                    <li class="dropdown-header"><a class="navbar-brand" href="/Lembur">Lembur Pegawai</a></li>
+
+                    <li class="dropdown-header"><a class="navbar-brand" href="/tunjangan">Tunjangan</a></li>
+
+                    <li class="dropdown-header"><a class="navbar-brand" href="/tunjangpegawai">Tunjangan Pegawai</a></li>
+
+                    <li class="dropdown-header"><a class="navbar-brand" href="/penggajian">Penggajian Pegawai</a></li>
+  </ul>
+</div>
+                
 </div>
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->

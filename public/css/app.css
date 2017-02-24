@@ -49,7 +49,7 @@ app.css:5
 }
 
 th {
-    background-color: #00aaff;
+    background-color: #003975;
     color: white;
 }
 
@@ -98,5 +98,9 @@ h3 {
 .active {
     background-color: #4CAF50;
     color: white;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
 }
 

@@ -13,6 +13,11 @@ class Golongancontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function index()
     {
         $golong=golongan::all();

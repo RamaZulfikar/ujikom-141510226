@@ -23,10 +23,13 @@ class PegawaiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
- public function __construct()
+
+    public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('hrd');
     }
+
+
         use RegistersUsers;
 
     public function index()
@@ -128,6 +131,7 @@ class PegawaiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function show($id)
     {
         $golongan=golongan::all();

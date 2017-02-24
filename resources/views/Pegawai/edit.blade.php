@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-<div class="panel panel-danger">
+<div class="panel panel-default">
 <div class="panel-heading"><h3><b>Ubah Pegawai</b></h3></div>
 <div class="panel-body">
 	{!! Form::model($pegawai, ['method' => 'PATCH', 'route' => ['pegawai.update', $pegawai->id]]) !!}

@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
+use Auth;
 class Admin
 {
     /**
@@ -15,10 +15,10 @@ class Admin
      */
     public function handle($request, Closure $next ){
 
-        if (auth()->check() && ! auth()->user()->Admin()){
+        if (auth()->check() &&$request->user()->permission=='Admin'){
         return $next($request);
     }
-        return redirect('/home');
+        return redirect()->guest('');
   }
 }
 

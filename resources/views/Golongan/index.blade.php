@@ -5,8 +5,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-primary">
-            <div class="panel panel-heading"><h1><center>Golongan</center></h1></div>
+            <div class="panel panel-default">
+            <div class="panel panel-heading"><h1><center>GOLONGAN</center></h1></div>
                 <a href="{{url('/golongan/create')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus "></span>Tambah Data</a><br>
                 <div class="panel-body">
                 <div class="form-group"><center>
@@ -46,6 +46,7 @@
                     </tbody>
                 </table>
             </div>
+        </div>
         </div>
     </div>
 </div>

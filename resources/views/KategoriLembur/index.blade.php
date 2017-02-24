@@ -5,8 +5,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-primary">
-            <div class="panel panel-heading"><h1><center>Kategori Lembur</center></h1></div>
+            <div class="panel panel-default">
+            <div class="panel panel-heading"><h1><center>KATEGORI LEMBUR</center></h1></div>
                 <a href="{{url('/kategori/create')}}" class="btn btn-success">Tambah Data</a><br>
                 <div class="panel-body">
                 <div class="form-group"><center>
